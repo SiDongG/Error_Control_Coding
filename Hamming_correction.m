@@ -1,6 +1,6 @@
 function Corrected_bits=Hamming_correction(Coded_bits,Block_Num,k,n)
 Corrected_bits=zeros(1,k,Block_Num);
-H=[1 0 0 1 0 1 1;      %Hamming code parity matrix (Systemic code)
+H=[1 0 0 1 0 1 1;      %Hamming code parity matrix (Systematic code)
    0 1 0 1 1 1 0;
    0 0 1 0 1 1 1];
 T=[1,0,0,0;      %Truncating matrix 
