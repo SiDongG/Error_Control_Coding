@@ -1,5 +1,5 @@
 
-%Convolutional Coded QPSK using Matlab Built-In Viterbi Decoder 
+%Convolutional Coded QPSK using Viterbi Decoder 
 %Author: Sidong Guo
 clear;clc;close all;
 tb=2;
