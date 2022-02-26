@@ -75,4 +75,6 @@ figure()
 semilogy(0:2:10,ratio)
 hold on 
 semilogy(0:2:10,Coded_ratio)
+xlabel('SNRdB')
+ylabel('BER')
 legend('QPSK','Coded-QPSK')
