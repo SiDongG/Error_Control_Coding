@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper,violet]{bbe}
+\usepackage{blindtext}
+\begin{document}
+	\title{Burst-Trapping Algorithm}
+	\section{Burst-Trapping Algorithm}
+	
+	Demonstration of Binary Cyclic Code's Ability in decoding burst-error. 
+	\begin{definition}
+	Suppose then that C is a burst-b error correcting code, and that the syndrome S(x) satisfies the two conditions:
+	\begin{equation}
+	    S(0)\neq 0
+	\end{equation}
+	\begin{equation}
+	    deg(S(x)) \leq b-1
+	\end{equation}
+	\end{definition}
+	\begin{remark}
+	deg(S(x))is the highest degree of S(x)
+	\end{remark}
+	
+Suppose we use a (7,3) Abramson Code with generator polynomial characterized by 
+\begin{equation}
+    g(x) = x^4 + x^3 + x^2 + 1
+\end{equation} 
+
+with a burst-correcting ability b=2; the received bit-stream is characterised by 
+\begin{equation}
+    R(x)=x^6+x^5+x^2+1
+\end{equation}
+    \begin{remark}
+        In matrix form \(R(x)=[1 0 1 0 0 1 1]\)
+    \end{remark}
+    Then the first syndrome is 
+\begin{equation}
+    S_0(x)=R(x) \mod g(x) =(x^6+x^5+x^2+1) \mod (x^4 + x^3 + x^2 + 1)=X^3+x^2
+\end{equation}
+\begin{remark}
+    Use polynomial long-division
+\end{remark}
+\begin{definition}
+    Meggitt's lemma 
+    
+    For \(j\geq 0\) define:
+    \begin{equation}
+        S_i(x)=[x^iR(x)]_n \mod g(x)
+    \end{equation}
+    \begin{equation}
+        S_{j+1}(x)=[xS_j(x)]\mod g(x)
+    \end{equation}
+\end{definition}
+\begin{remark}
+    \(S_j(x)\) is the remainder syndrome of the jth cyclic shift of \(R(x)\)
+\end{remark}
+We therefore have the following:
+
+\begin{equation}
+    S_1(x)=[xS_0(x)]\mod g(x)=x^2+1
+\end{equation}
+\begin{equation}
+    S_2(x)=[xS_1(x)]\mod g(x)=x^3+x
+\end{equation}
+\begin{remark}
+    \(xS_1(x)\) is degree-insufficient and therefore remainder is itself 
+\end{remark}
+\begin{equation}
+    S_3(x)=[xS_2(x)]\mod g(x)=x^3+1
+\end{equation}
+\begin{equation}
+    S_4(x)=[xS_3(x)]\mod g(x)=x^3+x^2+x+1
+\end{equation}
+\begin{equation}
+    S_5(x)=[xS_4(x)]\mod g(x)=x+1
+\end{equation}
+
+5th Syndrome finally satisfies definition one with degree of 1. Therefore transforming into matrix form, the burst error is 11 of location \(-5 \mod 7=2\). 
+
+The error vector is therefore \(E=[0011000]\) and the corrected sequence is \(R+E=[1001011]\)
+	\blinddocument
+\end{document}
