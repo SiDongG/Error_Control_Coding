@@ -1,0 +1,86 @@
+\documentclass[12pt,a4paper,violet]{bbe}
+\usepackage{blindtext}
+\begin{document}
+	\title{Galois Fields}
+	\author[Sidong Guo
+	\section{Galois Fields}
+Fundamentals for understanding Non-binary codes like BCH and Reed-Solomon
+	\begin{definition}
+A Galois Field, or finite field, is defined as a set \((\mathbb{F},+,\times)\) with two operations such that:
+
+1.\((\mathbb{F},+)\)is a commutative group with identity 0
+
+2.\((\mathbb{F},\times)\)is a commutative group with identity 1
+
+3.Multiplication distributes over addition
+	\end{definition}
+	\begin{remark}
+\(\forall\) a in \(\mathbb{F}\), there necessarily exists a additive inverse and multiplicative inverse with \(a+(-a)=0\) and \(a*a^{-1}=1\); a(b+c)=ab+ac.
+	\end{remark}
+\begin{definition}
+    A field \(\mathbb{F}\) with a finite number, q of elements is \(\mathbb{F}_q\)
+\end{definition}
+\begin{theorem}
+    Any integer \(n\in \mathbb{N}^*\) can be factored into an unique product of prime numbers
+\end{theorem}
+    \begin{remark}
+Proof by Contradiction
+    \end{remark}
+\begin{theorem}
+let \(m,n \in \mathbb{Z}\) with greatest common divisor g. Then, \(\exists a,b \in \mathbb{Z}\) such that \(g=am+bn\)
+\end{theorem}
+\begin{theorem}
+For any prime \(p\), \(\mathbb{Z}_p=[0,p-1]\) forms a field under modulo \(p\) addition and multiplication. The characteristic of the field is \(p\)
+\end{theorem}
+\begin{remark}
+It is easily provable that both \((\mathbb{Z}_{p};+_{mod p})\) and \((\mathbb{Z}_{p};\times_{mod p})\) are groups because in fact:
+\begin{equation}
+    \forall m \in \mathbb{Z}_p \qquad  m+0=0+m=m
+\end{equation}
+\begin{equation}
+    \forall m \in \mathbb{Z}_p \qquad m\times 1=1\times m=m
+\end{equation}
+Also by definition \(gcd(p,m)=1\), then by Theorem 2 we have \(1=ap+bm\), and therefore there exists \(a\) such that \(bm=1\quad mod \quad p\)
+\end{remark}
+\begin{theorem}
+Every field \(\mathbb{F}\) with a prime number \(p\) of elements is isomorphic to \(\mathbb{Z}_p\) via the correspondence:
+\begin{equation}
+    (i)1 \in \mathbb{F}\Leftrightarrow i \in \mathbb{Z}_p
+\end{equation}
+\end{theorem}
+\begin{theorem}
+if \(\alpha,\beta \in \mathbb{F}_q\) with characteristic p prime, then\((\alpha +\beta)^p=\alpha^p+\alpha^p\)
+\end{theorem}
+\begin{definition}
+    A non-zero polynomial f(x) of degree m over \(\mathbb{F}\) has expression:
+    \begin{equation}
+        f(x)=\sum_{i=1}^m f_ix^i \quad with \quad [f_i]_{i[1,m]} \in \mathbb{F}^m \quad and \quad f_m \neq 0
+    \end{equation}
+\end{definition}
+\begin{remark}
+A monic polynomial of degree m has \(f_m=1\); Polynomials over a field has coefficients within the field; The set of all polynomials over \(\mathbb{F}\) is \(\mathbb{F}[x]\)
+\end{remark}
+\begin{theorem}
+If \(\mathbb{F}_q\) is a Galois field and there exists a prime polynomial \(g(x) \in \mathbb{F}_q[x]\) of degree m, then \(\mathbb{F}_{g(x)}\) with addition and multiplication modulo \(g(x)\) in \(\mathbb{F}_q[x]\) is a field with \(q^m\) elements
+\end{theorem}
+\begin{definition}
+if \(f(x) \in \mathbb{F}_q[x]\) has a degree 1 factor \((x-\alpha)\), then \(\alpha\) is a root of \(f(x)\)
+\end{definition}
+\begin{theorem}
+A monic polynomial \(f(x) \in \mathbb{F}_q[x]\) of degree m has at most m roots in \(\mathbb{F}_q\), \({\beta_i}_{i \in [1,m]}\), then the unique factorization is
+\begin{equation}
+    f(x)=\prod_{i=1}^m (x-\beta_i)
+\end{equation}
+\end{theorem}
+\begin{theorem}
+A minimal polynomial w.r.t \(\mathbb{F}_q\) of \(\beta \in \mathbb{F}^*_{q^m}\) is a lowest degree monic polynomial \(M_\beta\) in \(\mathbb{F}_q[x]\) such that \(M_\beta(\beta)=0\)
+\end{theorem}
+\begin{remark}
+The polynomial \(x^4-1\) factorizes over GF(2)[x]as:
+\begin{equation}
+    x^4-1=x(x+1)(x^2+x+1)
+\end{equation}
+of which \((x^2+x+1)\) is primitive; a polynomial of degree n is primitive over galois field GF(2) if it has polynomial order \(2^n-1\)
+\end{remark}
+
+\end{document}
