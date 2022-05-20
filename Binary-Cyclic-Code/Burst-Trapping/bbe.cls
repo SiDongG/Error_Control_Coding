@@ -1,7 +1,4 @@
-%% TEMPLATE WRITER: SAY OL  %%
-%% EMAIL: say_ol@yahoo.com  %%
-%% WEBSITE: khtug.blogspot.com  %%
-%% PERSONAL BLOG: bunnybookshelf.blogspot.com  %%
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{bbe}[2020/04/20]
 \LoadClassWithOptions{book}
